@@ -1,0 +1,74 @@
+.container{
+    margin-top: 35px;
+}
+.add-site{
+    border-color:black;
+    border-style: solid;
+    border-width: 3.5px;
+    margin-top: 20px;
+}
+.add-site-header{
+    margin: 35px;
+}
+.add-site-input{
+    margin-left: 80px;
+    margin-right: 80px;
+   display: flex;
+   flex-direction: column; 
+  
+}
+.add-site-btns{
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-bottom:30px;
+}
+.btn-cancel{
+    border-color:black;
+    background-color:white;
+    width: 70px;
+    height: 38px;
+    margin-left:10px;
+    font-size:15px;
+}
+.site-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /*sets the number of columns in the grid to four. It divides the container into four equal-width columns*/
+    grid-gap: 5px;
+}
+.site{
+    width: 21rem;
+    border-style: solid;
+    border-width: 2px;
+    border-color:#111827;/* Equivalent to border-gray-900 in Bootstrap */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);/* Equivalent to shadow-lg in Bootstrap */
+    margin-right: 30px;
+   
+}
+.site h3{
+    padding: 10px;
+    font-size: bold;
+}
+.site-link{
+    margin: 0.75rem; /* Equivalent to m-3 in Bootstrap */
+    padding: 0.75rem; /* Equivalent to px-3 in Bootstrap */
+   
+    background-color: #BFDBFE; /* Equivalent to bg-blue-200 in Bootstrap */
+    color: #1E40AF; /* Equivalent to text-blue-800 in Bootstrap */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg in Bootstrap */
+    font-size: 0.875rem; /* Equivalent to text-sm in Bootstrap */
+}
+.img-container{
+    height: 45%;
+}
+.site-img{
+    width: 100%; /* Make the image take the full width of the container */
+    height: 100%;
+    object-fit: cover;
+}
+.butt{
+    margin-left: 10px;
+    background-color: black;
+    color: white;
+   
+    height: 38px;
+}

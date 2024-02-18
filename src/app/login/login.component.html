@@ -1,0 +1,33 @@
+<section class="container">
+    <div class="">
+        <div class="login">
+            <div>
+                <img class="image img-fluid" src="..\assets\Forgot password-amico.png" alt="">
+            </div>
+            <div class="form-container">
+                <h1 class="title">Log in to your account</h1>
+                <h4 class="fs-6 mb-5">Never Forgot Your Password Anymore</h4>
+                <div *ngIf="isError" class="alert alert-danger">
+                    The Username or Password is wrong
+                </div>
+                <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+                    <div class="input">
+                        <!--<label class="">Email address</label>-->
+                        <input type="email" ngModel name="email" placeholder="Type your email" class="form-control form-control-lg" >
+                    </div>
+
+                    <div class="input">
+                        <!--<label class="">password</label>-->
+                        <input type="password"  ngModel name="password" placeholder="Type your password" class="form-control form-control-lg">
+                    </div>
+                 
+                    <div class="btn-div d-grid gap-2">
+                        <button   class="login-btn btn btn-lg btn-dark">
+                          Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="container mx-auto my-16">
+    <h1 class="text-5xl mt-0 mb-3">Safe place for all your passwords</h1>
+    <p class="mb-3">Your password - is your <span>password</span></p>
+  
+    <button  class="mb-3 btn btn-dark ">{{formState}} Site</button>
+
+    <div 
+    *ngIf="isSuccess"
+    class="alert alert-success mt-3 mb-3" role="alert">
+      {{successMessage}}
+      </div>
+
+
+    <div class="add-site mb-10" >
+        <div class="add-site-header">
+            <h2 class="text-3xl text-center"> {{formState}} Site</h2>
+            <p class="text-center">You can {{formState}} site from the below form</p>
+        </div>
+        <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+            <div class="add-site-input">
+                <label >Site name</label>
+                <input [(ngModel)]='siteName' type="text" name="siteName"  class="rounded">
+            </div>
+            <div class="add-site-input">
+                <label>Site URL</label>
+                <input [(ngModel)]="siteUrl" type="text" name="siteUrl"  class="rounded">
+            </div>
+            <div class="add-site-input">
+                <label >Site Image URL</label>
+                <input [(ngModel)]="siteImgUrl" type="text"  name="siteImgUrl" class="rounded">
+            </div>
+            <div class="add-site-btns">
+                <button  class="btn btn-dark ">{{formState}} Site</button>
+                <button type="reset" class="btn-cancel rounded">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+   
+    <div class="site-container mt-5 mb-5">
+        <div *ngFor="let site of allSites|async" class="site">
+            <div class="img-container">
+                <img class="site-img" [src]="site.siteImgUrl" alt="">
+            </div>
+           
+            <h3 class="text-xl">{{site.siteName}}</h3>
+            <div class="site-link">
+               {{site.siteUrl}}
+            </div>
+           <div class="site-butt mb-3">
+            <button routerLink="/password-list" [queryParams]="{id:site.id,siteName:site.siteName,siteUrl:site.siteUrl,siteImgUrl:site.siteImgUrl}"
+             class="butt rounded">Add New password</button>
+            <button  
+            (click)="editSite(site.siteName,site.siteUrl,site.siteImgUrl,site.id)"
+            class="btn-cancel rounded">Edit</button>
+            <button  
+            (click)="deleteSite(site.id)"
+            class="btn-cancel rounded">Delete</button>
+           </div>
+        </div>
+    </div>
+</div>
